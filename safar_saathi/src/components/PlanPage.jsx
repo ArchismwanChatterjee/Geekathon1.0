@@ -1,5 +1,9 @@
+/* eslint-disable no-unused-vars */
 import "./plan_page.css";
 import { useState, useEffect } from "react";
+
+const matchingPlaces = [];
+const elements = [];
 
 const PlanPage = ({ searchInput, date, days, people }) => {
   const [data, setData] = useState([]);
