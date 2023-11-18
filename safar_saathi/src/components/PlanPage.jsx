@@ -30,7 +30,7 @@ const PlanPage = () => {
           const nplace2 = place1[1];
           console.log(nplace1);
           elements.push(
-            <div key={index} className="data-box" id={`place${index + 1}`}>
+              <div key={index} className="data-box" id={`place${index + 1}`}>
               <h2>{nplace1}</h2>
               <p>{nplace2}</p>
               <input
@@ -46,7 +46,9 @@ const PlanPage = () => {
       .catch((error) => console.error("Error fetching data:", error));
   }, [loca]);
 
-  return <div className="data-container">{elements}</div>;
+  return <div className="data-container">
+    {elements}
+    </div>;
 };
 
 export default PlanPage;

@@ -1,32 +1,81 @@
 /* DataDisplay.css */
+* {
+  margin: 0;
+  padding: 0;
+}
+@keyframes imageTransition {
+  0% {
+    background-image: url("../images/io.png");
+  }
+  25% {
+    background-image: url("../images/photo-1496372412473-e8548ffd82bc.jpg");
+  }
+  50% {
+    background-image: url("../images/photo-1602216056096-3b40cc0c9944.jpg");
+  }
+  75% {
+    background-image: url("../images/julian-yu-_WuPjE-MPHo-unsplash.jpg");
+  }
+  100% {
+    background-image: url("../images/gautam-arora-dCnHbVhM2w8-unsplash.jpg");
+  }
+}
+body{
+  position: relative;
+  overflow-x: hidden;
+  overflow-y: scroll;
+  background-image: url(../images/io.png);
+  background-position: center;
+  background-repeat: repeat;
+  background-size: cover;
+  animation: imageTransition 15s infinite;
+}
+
+.hello-heading {
+  font-size: 2em; /* Adjust the font size as needed */
+  margin-bottom: 20px; /* Adjust the margin as needed */
+}
+
 .data-container {
-    display: flex;
-    flex-direction: column;
-    flex-wrap: wrap;
-    justify-content: center;
-  }
-  
-  .data-box {
-    border: 1px solid #ccc;
-    border-radius: 8px;
-    padding: 16px;
-    margin: 16px;
-    width: 1000px; /* Adjust the width as needed */
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-  }
-  
-  .data-box h2 {
-    margin-bottom: 8px;
-  }
-  .data-box p {
-    display: none; /* Hide the paragraph by default */
-  }
-  
-  .data-box:hover p {
-    display: block; /* Show the paragraph when the .data-box is hovered */
-  }
-  .check {
-    display: flex;
-    flex-direction: row-reverse;
-    justify-content: flex-start;
-  }
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: flex-start; /* Center content horizontally and vertically */
+  margin-top: 100px;
+  margin-left: 50px; /* Adjust the margin-top value as needed */
+}
+
+.data-box {
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  padding: 16px;
+  margin-top: 10px;
+  width: 900px; /* Adjust the width as needed */
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  background-color: white;
+}
+
+.data-box h2 {
+  margin-bottom: 8px;
+}
+
+.data-box p {
+  display: none; /* Hide the paragraph by default */
+}
+
+.data-box:hover p {
+  display: block; /* Show the paragraph when the .data-box is hovered */
+}
+
+.check {
+  display: flex;
+  flex-direction: row-reverse;
+  justify-content: flex-start;
+}
+
+#Navbar {
+  height: 80px; /* Adjust the height as needed */
+}
+
+
