@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import "./landingPage.css";
-import "./script.js"; // Assuming this is the file where you have your JavaScript logic
+
+// import "./script.js"; // Assuming this is the file where you have your JavaScript logic
 
 const LandingPage = () => {
   const [searchInput, setSearchInput] = useState("");
@@ -17,34 +18,17 @@ const LandingPage = () => {
   return (
     <div className="main">
       <div className="page1">
-        <nav>
-          {/* ... (your navigation code) */}
-          <div class="leftpart">
-            <div class="logo">
-              <img src="hello.png" alt="" />
-            </div>
-            <div class="namelogo">Safar-Saathi</div>
-          </div>
-          <div class="rightpart">
-            <button class="login">Login</button>
-            <button class="login">SignUp</button>
-            <button class="en">
-              <img src="./global-line.png" alt="" />
-              <p>EN</p>
-            </button>
-          </div>
-        </nav>
         <div className="contentbox">
           <h2>Plan your next adventure</h2>
           <div className="oneone">
-            {/* <label htmlFor="search">Where do you want to go?</label>
+            <label htmlFor="search">Where do you want to go?</label>
             <input
               type="text"
               id="searchInput"
               placeholder="Search..."
               value={searchInput}
               onChange={(e) => setSearchInput(e.target.value)}
-            /> */}
+            />
             {/* ... (your dropdown code) */}
           </div>
           <div className="oneone">
