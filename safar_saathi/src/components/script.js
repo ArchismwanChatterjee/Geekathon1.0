@@ -1,9 +1,9 @@
-const searchInput = document.getElementById("searchInput");
-const searchResults = document.getElementById("searchResults");
-const dropdownContent = document.querySelector(".dropdown-content");
+// const searchInput = document.getElementById("searchInput");
+// const searchResults = document.getElementById("searchResults");
+// const dropdownContent = document.querySelector(".dropdown-content");
 
 // List of locations
-const locations = [
+export const locations = [
   "Manali",
   "Leh Ladakh",
   "Coorg",
@@ -102,47 +102,47 @@ const locations = [
   "Poovar",
 ];
 
-searchInput.addEventListener("input", function () {
-  const searchTerm = searchInput.value.toLowerCase();
+// searchInput.addEventListener("input", function () {
+//   const searchTerm = searchInput.value.toLowerCase();
 
-  // Filter locations based on the search term
-  const filteredLocations = locations.filter((location) =>
-    location.toLowerCase().includes(searchTerm)
-  );
+//   // Filter locations based on the search term
+//   const filteredLocations = locations.filter((location) =>
+//     location.toLowerCase().includes(searchTerm)
+//   );
 
-  // Clear previous results
-  dropdownContent.innerHTML = "";
+//   // Clear previous results
+//   dropdownContent.innerHTML = "";
 
-  function handleOptionClick(optionText) {
-    searchInput.value = optionText;
-    dropdownContent.parentElement.style.display = "none"; // Hide the dropdown
-  }
+//   function handleOptionClick(optionText) {
+//     searchInput.value = optionText;
+//     dropdownContent.parentElement.style.display = "none"; // Hide the dropdown
+//   }
 
-  // Add new results
-  if (filteredLocations.length > 0) {
-    filteredLocations.forEach((location) => {
-      const listItem = document.createElement("li");
-      listItem.textContent = location;
-      // Add click event listener to the option
-      listItem.addEventListener("click", function () {
-        handleOptionClick(location);
-      });
-      dropdownContent.appendChild(listItem);
-    });
+//   // Add new results
+//   if (filteredLocations.length > 0) {
+//     filteredLocations.forEach((location) => {
+//       const listItem = document.createElement("li");
+//       listItem.textContent = location;
+//       // Add click event listener to the option
+//       listItem.addEventListener("click", function () {
+//         handleOptionClick(location);
+//       });
+//       dropdownContent.appendChild(listItem);
+//     });
 
-    // Make the dropdown menu scrollable if it exceeds a certain height
-    if (dropdownContent.scrollHeight > 200) {
-      dropdownContent.style.maxHeight = "125px"; // Adjust the maximum height as needed
-      dropdownContent.style.overflowY = "scroll";
-    } else {
-      dropdownContent.style.maxHeight = "none";
-      dropdownContent.style.overflowY = "auto";
-    }
+//     // Make the dropdown menu scrollable if it exceeds a certain height
+//     if (dropdownContent.scrollHeight > 200) {
+//       dropdownContent.style.maxHeight = "125px"; // Adjust the maximum height as needed
+//       dropdownContent.style.overflowY = "scroll";
+//     } else {
+//       dropdownContent.style.maxHeight = "none";
+//       dropdownContent.style.overflowY = "auto";
+//     }
 
-    // Show the dropdown
-    dropdownContent.parentElement.style.display = "block";
-  } else {
-    // Hide the dropdown if there are no results
-    dropdownContent.parentElement.style.display = "none";
-  }
-});
+//     // Show the dropdown
+//     dropdownContent.parentElement.style.display = "block";
+//   } else {
+//     // Hide the dropdown if there are no results
+//     dropdownContent.parentElement.style.display = "none";
+//   }
+// });
