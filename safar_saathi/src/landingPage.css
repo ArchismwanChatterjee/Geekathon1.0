@@ -33,7 +33,7 @@ html {
   position: relative;
   overflow-x: hidden;
   overflow-y: scroll;
-  background-image: url(./io.png);
+  background-image: url(images/io.png);
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
@@ -45,19 +45,19 @@ html {
 
 @keyframes imageTransition {
   0% {
-    background-image: url("io.png");
+    background-image: url("images/io.png");
   }
   25% {
-    background-image: url("photo-1496372412473-e8548ffd82bc.jpg");
+    background-image: url("images/photo-1496372412473-e8548ffd82bc.jpg");
   }
   50% {
-    background-image: url("photo-1602216056096-3b40cc0c9944.jpg");
+    background-image: url("images/photo-1602216056096-3b40cc0c9944.jpg");
   }
   75% {
-    background-image: url("julian-yu-_WuPjE-MPHo-unsplash.jpg");
+    background-image: url("images/julian-yu-_WuPjE-MPHo-unsplash.jpg");
   }
   100% {
-    background-image: url("gautam-arora-dCnHbVhM2w8-unsplash.jpg");
+    background-image: url("images/gautam-arora-dCnHbVhM2w8-unsplash.jpg");
   }
 }
 .page1 {

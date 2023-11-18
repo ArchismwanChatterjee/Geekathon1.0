@@ -1,6 +1,9 @@
 import React, { useState } from "react";
 import "./landingPage.css";
-import "./script.js"; // Assuming this is the file where you have your JavaScript logic
+import logo from "./images/hello.png"
+import global_line from "./images/global-line.png"
+
+// import "./script.js"; // Assuming this is the file where you have your JavaScript logic
 
 const LandingPage = () => {
   const [searchInput, setSearchInput] = useState("");
@@ -21,7 +24,7 @@ const LandingPage = () => {
           {/* ... (your navigation code) */}
           <div class="leftpart">
             <div class="logo">
-              <img src="hello.png" alt="" />
+              <img src={logo} alt="" />
             </div>
             <div class="namelogo">Safar-Saathi</div>
           </div>
@@ -29,7 +32,7 @@ const LandingPage = () => {
             <button class="login">Login</button>
             <button class="login">SignUp</button>
             <button class="en">
-              <img src="./global-line.png" alt="" />
+              <img src={global_line} alt="" />
               <p>EN</p>
             </button>
           </div>
