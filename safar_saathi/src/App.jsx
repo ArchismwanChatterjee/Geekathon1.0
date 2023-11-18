@@ -24,6 +24,18 @@ const App = () => {
   const[user,setUser]=useState("");
   const[loggedIn,setLoggedIn]=useState("");
 
+  const [searchInput, setSearchInput] = useState("");
+  const [date, setDate] = useState("");
+  const [days, setDays] = useState("");
+  const [people, setPeople] = useState("");
+  
+  function createPlan(searchInput,date,days,people){
+    setSearchInput(searchInput);
+    setDate(date);
+    setDays(days);
+    setPeople(people);
+  }
+
   function doLogin() {
     signInWithGoogle()
         .then(() => {
@@ -69,9 +81,9 @@ const App = () => {
     <div className="App">
       <Navbar login={doLogin} logout={doLogout} user={user} loggedIn={loggedIn} />
       <Routes>
-        <Route path="" element={<LandingPage />}></Route>
+        <Route path="" element={<LandingPage createPlan={createPlan} />}></Route>
         {/* <Route path="place" element={<Place />}></Route> */}
-        <Route path="plan" element={<PlanPage />} />
+        <Route path="plan" element={<PlanPage searchInput={searchInput} date={date} days={days} people={people} />} />
       </Routes>
 
     </div>

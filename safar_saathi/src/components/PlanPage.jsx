@@ -4,9 +4,9 @@ import { useState, useEffect } from "react";
 const matchingPlaces = [];
 const elements = [];
 
-const PlanPage = () => {
+const PlanPage = ({searchInput,date,days,people}) => {
   const [data, setData] = useState([]);
-  const loca = "Manali";
+  const loca = searchInput;
 
   useEffect(() => {
     // Assuming you have the data.json file in the public folder
@@ -17,7 +17,7 @@ const PlanPage = () => {
         
         for (const entry of jsonData) {
           if (entry.City === loca) {
-            const placeDesc = `${entry.Place} ~ ${entry.Place_desc}`;
+            const placeDesc = `${entry.Place}   ~ ${entry.Place_desc}`;
             matchingPlaces.push(placeDesc);
           }
         }

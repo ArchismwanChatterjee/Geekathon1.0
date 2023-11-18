@@ -1,19 +1,14 @@
 import React, { useState } from "react";
 import "./landingPage.css";
+import { Link } from "react-router-dom";
 
 // import "./script.js"; // Assuming this is the file where you have your JavaScript logic
 
-const LandingPage = () => {
+const LandingPage = ({createPlan}) => {
   const [searchInput, setSearchInput] = useState("");
+  const [date, setDate] = useState("");
   const [days, setDays] = useState("");
-
-  const place = () => {
-    // Your place function logic goes here
-    // Note: You can access searchInput and days directly from the state
-    // Example: localStorage.setItem("loc", searchInput);
-    // Example: localStorage.setItem("days", days);
-    // Example: window.location.href = "place.html";
-  };
+  const [people, setPeople] = useState("");
 
   return (
     <div className="main">
@@ -37,6 +32,8 @@ const LandingPage = () => {
               type="date"
               placeholder="26/11/23"
               id="when"
+              value={date}
+              onChange={(e) => setDate(e.target.value)}
               // Add value and onChange props if you want to handle the state
             />
           </div>
@@ -53,7 +50,14 @@ const LandingPage = () => {
           </div>
           <div className="oneone">
             <label htmlFor="people">How many people are going?</label>
-            <input type="number" placeholder="0" id="people" min="0" />
+            <input
+              type="number"
+              placeholder="0"
+              id="people"
+              min="0"
+              value={people}
+              onChange={(e) => setPeople(e.target.value)}
+            />
           </div>
           <div className="oneone1">
             {/* ... (your checkbox code) */}
@@ -65,9 +69,9 @@ const LandingPage = () => {
               </label>
             </div>
           </div>
-          <button className="createplan" onClick={place}>
+          <Link to="/plan" className="createplan" onClick={()=>createPlan(searchInput,date,days,people)}>
             Create Plan
-          </button>
+          </Link>
         </div>
       </div>
     </div>
