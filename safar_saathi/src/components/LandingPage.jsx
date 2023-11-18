@@ -1,7 +1,5 @@
 import React, { useState } from "react";
 import "./landingPage.css";
-import logo from "./images/hello.png"
-import global_line from "./images/global-line.png"
 
 // import "./script.js"; // Assuming this is the file where you have your JavaScript logic
 
@@ -20,23 +18,6 @@ const LandingPage = () => {
   return (
     <div className="main">
       <div className="page1">
-        <nav>
-          {/* ... (your navigation code) */}
-          <div class="leftpart">
-            <div class="logo">
-              <img src={logo} alt="" />
-            </div>
-            <div class="namelogo">Safar-Saathi</div>
-          </div>
-          <div class="rightpart">
-            <button class="login">Login</button>
-            <button class="login">SignUp</button>
-            <button class="en">
-              <img src={global_line} alt="" />
-              <p>EN</p>
-            </button>
-          </div>
-        </nav>
         <div className="contentbox">
           <h2>Plan your next adventure</h2>
           <div className="oneone">
