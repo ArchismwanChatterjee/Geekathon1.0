@@ -41,7 +41,7 @@ body{
   flex-direction: column;
   flex-wrap: wrap;
   justify-content: center;
-  align-items: flex-start; /* Center content horizontally and vertically */
+  align-items: center; /* Center content horizontally and vertically */
   margin-top: 100px;
   margin-left: 50px; /* Adjust the margin-top value as needed */
 }
@@ -53,7 +53,7 @@ body{
   margin-top: 10px;
   width: 900px; /* Adjust the width as needed */
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-  background-color: white;
+  background-color: rgb(255, 255, 255,0.75);
 }
 
 .data-box h2 {
