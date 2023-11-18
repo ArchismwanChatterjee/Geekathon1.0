@@ -1,13 +1,13 @@
 import React from "react";
 import LandingPage from "./components/LandingPage";
 import Navbar from "./components/Navbar";
-
+import PlanPage from './components/PlanPage';
 const App = () => {
   return (
-    <div>
-      <Navbar />
-      <LandingPage />
+     <div>
+       <PlanPage/>
     </div>
+    
   );
 };
 
