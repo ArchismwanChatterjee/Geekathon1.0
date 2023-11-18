@@ -11,7 +11,12 @@ const GoogleMapsPage = () => {
           <div className="gmap_canvas">
             <iframe
               className="gmap_iframe"
-              style={{ border: "0", overflow: "hidden" }}
+              style={{
+                border: "0",
+                overflow: "hidden",
+                borderRadius: "10px",
+                padding: "10px",
+              }}
               marginHeight="0"
               marginWidth="0"
               src="https://maps.google.com/maps?width=600&amp;height=400&amp;hl=en&amp;q=Victoria Memorial&amp;t=h&amp;z=13&amp;ie=UTF8&amp;iwloc=B&amp;output=embed"
@@ -31,8 +36,6 @@ const GoogleMapsPage = () => {
           .mapouter {
             position: relative;
             text-align: right;
-            width: 600px;
-            height: 400px;
           }
 
           .gmap_canvas {
@@ -40,11 +43,13 @@ const GoogleMapsPage = () => {
             background: none !important;
             width: 600px;
             height: 400px;
+            border-radius: 10px;
+            padding: 10px;
           }
 
           .gmap_iframe {
-            width: 600px !important;
-            height: 400px !important;
+            width: 100%;
+            height: 100%;
           }
         `}
       </style>
