@@ -2,14 +2,15 @@
 import React, { useState } from "react";
 import logo from "../images/hello.png";
 import global_line from "../images/global-line.png";
-import { Link } from "react-router-dom";
-const navbar = ({ login, logout, user, loggedIn }) => {
+import { useNavigate } from "react-router-dom";
+const Navbar = ({ login, logout, user, loggedIn }) => {
+  const navigate=useNavigate();
   return (
     <div>
       <nav>
         <div className="leftpart">
           <div className="logo">
-            <img src={logo} alt="" />
+            <img src={logo} alt="" onClick={()=>{navigate('/')}}/>
           </div>
           <div className="namelogo"></div>
         </div>
@@ -38,4 +39,4 @@ const navbar = ({ login, logout, user, loggedIn }) => {
   );
 };
 
-export default navbar;
+export default Navbar;
