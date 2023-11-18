@@ -1,8 +1,10 @@
+/* eslint-disable no-unused-vars */
 /* eslint-disable jsx-a11y/iframe-has-title */
 import React from "react";
 
-const GoogleMapsPage = ({place}) => {
-  let query="https://maps.google.com/maps?width=600&amp;height=400&amp;hl=en&amp;q=Victoria Memorial&amp;t=h&amp;z=13&amp;ie=UTF8&amp;iwloc=B&amp;output=embed"
+const GoogleMapsPage = ({ place }) => {
+  let query =
+    "https://maps.google.com/maps?width=600&amp;height=400&amp;hl=en&amp;q=Victoria Memorial&amp;t=h&amp;z=13&amp;ie=UTF8&amp;iwloc=B&amp;output=embed";
   return (
     <div>
       <h1 className="google-maps-header">GOOGLE MAP</h1>
