@@ -1,9 +1,13 @@
 import openai
 import pandas as pd
+import os 
+from dotenv import load_dotenv
 
-data = pd.read_csv("D:\safar_saathi\Routing\data.csv")
+load_dotenv()
+
+data = pd.read_csv("E:\Safar-sathi\safar_saathi\src\components\data.csv")
 # Load your data
-data = pd.read_csv("D:\safar_saathi\Routing\data.csv")
+data = pd.read_csv("E:\Safar-sathi\safar_saathi\src\components\data.csv")
 
 # List travel destinations and get user input
 for i, destination in enumerate(data['name']):
@@ -29,7 +33,9 @@ If the number of destinations is double the number of days it is very hectic for
 #  If {dest} is double the {x} it is very hectic for me to visit all the places. Based on the trip you created, what will be the total expense of traveling around and just enjoying for {person} person? Include the prices for {hotel}'''
 
 # Replace with your OpenAI API key
-api_key = "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"
+api_key = os.getenv('key')
+
+#os.environ.get
 
 # Send a request to the API
 response = openai.Completion.create(

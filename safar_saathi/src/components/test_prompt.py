@@ -1,9 +1,13 @@
 import openai
 import pandas as pd
+import os 
+from dotenv import load_dotenv
 
-data = pd.read_csv("D:\safar_saathi\Routing\data.csv")
+load_dotenv()
+
+data = pd.read_csv("E:\Safar-sathi\safar_saathi\src\components\data.csv")
 # Load your data
-data = pd.read_csv("D:\safar_saathi\Routing\data.csv")
+data = pd.read_csv("E:\Safar-sathi\safar_saathi\src\components\data.csv")
 
 # List travel destinations and get user input
 for i, destination in enumerate(data['name']):
@@ -25,7 +29,7 @@ Provide me with "Open and Close Timings for each {destinations_str}", “Destina
 in {destinations_str} (make an optimised tour plan without destination repetitions)”, “Travel Logistics”, “Check-in and Check-out timings from {hotel} everyday. Include these details day-wise"'''
 
 # Replace with your OpenAI API key
-api_key = "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"
+api_key = os.getenv('key')
 
 # Send a request to the API
 response = openai.Completion.create(
