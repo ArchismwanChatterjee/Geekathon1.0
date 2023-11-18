@@ -1,5 +1,5 @@
 import "./plan_page.css";
-import { useState, useEffect } from 'react';
+import { useState, useEffect } from "react";
 
 const matchingPlaces = [];
 const elements = [];
@@ -10,11 +10,11 @@ const PlanPage = () => {
 
   useEffect(() => {
     // Assuming you have the data.json file in the public folder
-    fetch("./csvjson.json")
+    fetch("/csvjson.json")
       .then((response) => response.json())
       .then((jsonData) => {
         setData(jsonData);
-
+        
         for (const entry of jsonData) {
           if (entry.City === loca) {
             const placeDesc = `${entry.Place} ~ ${entry.Place_desc}`;
