@@ -1,0 +1,32 @@
+/* DataDisplay.css */
+.data-container {
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+  
+  .data-box {
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    padding: 16px;
+    margin: 16px;
+    width: 1000px; /* Adjust the width as needed */
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  }
+  
+  .data-box h2 {
+    margin-bottom: 8px;
+  }
+  .data-box p {
+    display: none; /* Hide the paragraph by default */
+  }
+  
+  .data-box:hover p {
+    display: block; /* Show the paragraph when the .data-box is hovered */
+  }
+  .check {
+    display: flex;
+    flex-direction: row-reverse;
+    justify-content: flex-start;
+  }
