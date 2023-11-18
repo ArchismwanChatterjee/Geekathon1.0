@@ -2,21 +2,21 @@
 import React, { useState } from "react";
 import logo from "../images/hello.png";
 import global_line from "../images/global-line.png";
-
+import { Link } from "react-router-dom";
 const navbar = () => {
   return (
     <div>
       <nav>
-        <div class="leftpart">
-          <div class="logo">
+        <div className="leftpart">
+          <div className="logo">
             <img src={logo} alt="" />
           </div>
-          <div class="namelogo"></div>
+          <div className="namelogo"></div>
         </div>
-        <div class="rightpart">
-          <button class="login">Login</button>
-          <button class="login">SignUp</button>
-          <button class="en">
+        <div className="rightpart">
+          <button className="login">Login</button>
+          <button className="login">SignUp</button>
+          <button className="en">
             <img src={global_line} alt="" />
             <p>EN</p>
           </button>
