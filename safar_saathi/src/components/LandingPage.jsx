@@ -29,7 +29,19 @@ const LandingPage = () => {
               value={searchInput}
               onChange={(e) => setSearchInput(e.target.value)}
             />
-            {/* ... (your dropdown code) */}
+            <style>
+              {`.narrow-dropdown {
+                max-width: 500px; /* Adjust the width as needed */
+              }`}
+            </style>
+            <div className="dropdown">
+              {/* <button className="dropdown-toggle" data-toggle="dropdown">Show Results</button> */}
+              <div className="dropdown-menu narrow-dropdown">
+                {/* Added class "narrow-dropdown" */}
+                <ul id="searchResults" className="dropdown-content"></ul>
+              </div>
+            </div>
+            <script src="script.js"></script>
           </div>
           <div className="oneone">
             <label htmlFor="when">When does your trip Start?</label>
