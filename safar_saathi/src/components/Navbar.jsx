@@ -1,3 +1,4 @@
+/* eslint-disable no-unused-vars */
 import React, { useState } from "react";
 import logo from "../images/hello.png";
 import global_line from "../images/global-line.png";
