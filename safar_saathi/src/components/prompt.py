@@ -27,7 +27,7 @@ selected_destinations = [data.iloc[loc]['name'] for loc in locs]
 destinations_str = ', '.join(selected_destinations)
 dest = len(destinations_str)
 prompt = f'''Create an Itinerary for a {x}-day trip to {destinations_str}. Make sure to include the most beautiful yet safe places I can explore. Include a moderate amount of things to do since I also want some time to relax.
-If the number of destinations is double the number of days it is very hectic for me to visit all the places. Also provide the contact details of Tourism Development Corporation of that place. The output should be in json file format'''
+If the number of destinations is double the number of days it is very hectic for me to visit all the places. Also provide the contact details of Tourism Development Corporation of that place.'''
 
 # prompt = f'''Create an Itinerary for a {x}-day trip to {destinations_str}. Make sure to include the most beautiful yet safe places I can explore. Include a moderate amount of things to do since I also want some time to relax.
 #  If {dest} is double the {x} it is very hectic for me to visit all the places. Based on the trip you created, what will be the total expense of traveling around and just enjoying for {person} person? Include the prices for {hotel}'''
