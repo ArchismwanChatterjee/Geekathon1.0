@@ -21,14 +21,14 @@ const LandingPage = () => {
         <div className="contentbox">
           <h2>Plan your next adventure</h2>
           <div className="oneone">
-            {/* <label htmlFor="search">Where do you want to go?</label>
+            <label htmlFor="search">Where do you want to go?</label>
             <input
               type="text"
               id="searchInput"
               placeholder="Search..."
               value={searchInput}
               onChange={(e) => setSearchInput(e.target.value)}
-            /> */}
+            />
             {/* ... (your dropdown code) */}
           </div>
           <div className="oneone">

@@ -10,7 +10,7 @@ const navbar = () => {
           <div class="logo">
             <img src={logo} alt="" />
           </div>
-          <div class="namelogo">Safar-Saathi</div>
+          <div class="namelogo"></div>
         </div>
         <div class="rightpart">
           <button class="login">Login</button>
