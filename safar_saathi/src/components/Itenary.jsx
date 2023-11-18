@@ -14,6 +14,7 @@ const ItineraryCard = ({ itinerary }) => {
             margin-right: 20px;
             border-radius: 10px;
             background-color: #f5f5f5;
+            margin-top: 15px;
           }
         `}
       </style>
