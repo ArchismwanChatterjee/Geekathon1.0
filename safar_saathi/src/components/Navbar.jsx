@@ -3,7 +3,7 @@ import React, { useState } from "react";
 import logo from "../images/hello.png";
 import global_line from "../images/global-line.png";
 import { Link } from "react-router-dom";
-const navbar = () => {
+const navbar = ({ login, logout, user, loggedIn }) => {
   return (
     <div>
       <nav>
@@ -14,8 +14,19 @@ const navbar = () => {
           <div className="namelogo"></div>
         </div>
         <div className="rightpart">
-          <button className="login">Login</button>
-          <button className="login">SignUp</button>
+
+          {loggedIn ? (<>
+            <h1>Hello, {user}!</h1>
+            <button className="login" onClick={logout}>
+            Logout
+          </button>
+          </>
+          ) : (
+            <button className="login" onClick={login}>
+              Login
+            </button>
+          )}
+
           <button className="en">
             <img src={global_line} alt="" />
             <p>EN</p>
