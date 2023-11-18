@@ -4,7 +4,7 @@ import React from "react";
 const GoogleMapsPage = () => {
   return (
     <div>
-      <h1>This is my Google Maps web page</h1>
+      <h1 className="google-maps-header">GOOGLE MAP</h1>
 
       <div className="map-container">
         <div className="mapouter">
@@ -29,6 +29,20 @@ const GoogleMapsPage = () => {
 
       <style>
         {`
+
+        .google-maps-header {
+            font-size: 36px;
+            font-weight: bold;
+            color: #87ceeb; /* Sky text */
+            background: #fff; /* White background */
+            display: inline-block;
+            border: 2px solid #87ceeb; /* Sky border */
+            border-radius: 5px;
+            padding: 10px;
+            margin-bottom: 10px;
+            margin-left: 160px;
+        }
+
           .map-container {
             display: flex;
             justify-content: flex-end; /* Align to the right */

@@ -9,8 +9,10 @@ import { signInWithGoogle } from "./components/Login";
 import { auth } from "./components/Login"; // Import your Firebase configuration
 import { useState } from "react";
 import GoogleMapsPage from "./components/map";
+import MainContent from "./components/Itenary";
 
 const App = () => {
+  const generatedItinerary = "Your generated itinerary goes here.";
   const logout = () => {
     auth
       .signOut()
@@ -106,8 +108,9 @@ const App = () => {
             />
           }
         />
-        <Route path="google-maps" element={<GoogleMapsPage />} />
+        {/* <Route path="google-maps" element={<GoogleMapsPage />} /> */}
       </Routes>
+      <MainContent itinerary={generatedItinerary} />
     </div>
   );
 };
