@@ -20,6 +20,9 @@
     background-image: url("../images/gautam-arora-dCnHbVhM2w8-unsplash.jpg");
   }
 }
+
+
+
 body{
   position: relative;
   overflow-x: hidden;
@@ -31,18 +34,40 @@ body{
   animation: imageTransition 15s infinite;
 }
 
-.hello-heading {
-  font-size: 2em; /* Adjust the font size as needed */
-  margin-bottom: 20px; /* Adjust the margin as needed */
+#heading {
+  margin-top: 70px;
+  height: 70px;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  background-color: rgba(255, 255, 255, 0.75);
+}
+.button-container {
+  position: fixed;
+  bottom: 50px; 
+  right: 100px; 
 }
 
+#submit {
+  height: 50px;
+  width: 150px;
+  border-radius: 2.4vw;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  font-size: large;
+  background-image: linear-gradient( to right, rgb(234, 156, 219), rgb(239, 132, 171) );
+  /* Additional styling for the button if needed */
+}
 .data-container {
   display: flex;
   flex-direction: column;
   flex-wrap: wrap;
   justify-content: center;
-  align-items: center; /* Center content horizontally and vertically */
-  margin-top: 100px;
+  align-items: flex-start; /* Center content horizontally and vertically */
+  margin-top: 50px;
   margin-left: 50px; /* Adjust the margin-top value as needed */
 }
 
@@ -70,12 +95,10 @@ body{
 
 .check {
   display: flex;
-  flex-direction: row-reverse;
-  justify-content: flex-start;
+  flex-direction: row;
+  justify-content: center;
+  align-items: flex-end;
 }
 
-#Navbar {
-  height: 80px; /* Adjust the height as needed */
-}
 
 

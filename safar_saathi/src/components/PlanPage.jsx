@@ -46,9 +46,20 @@ const PlanPage = () => {
       .catch((error) => console.error("Error fetching data:", error));
   }, [loca]);
 
-  return <div className="data-container">
+  return (
+  <div>
+  <div id="heading">
+    <h1>Choose Places You Want To Visit</h1>
+  </div>
+  <div class="button-container">
+    <button id="submit">Submit</button>
+  </div>
+  <div className="data-container">
     {elements}
-    </div>;
+  </div>
+</div>
+
+  );
 };
 
 export default PlanPage;
