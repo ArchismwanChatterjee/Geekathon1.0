@@ -16,6 +16,7 @@ const GoogleMapsPage = () => {
                 overflow: "hidden",
                 borderRadius: "10px",
                 padding: "10px",
+                boxShadow: "0 4px 8px rgba(0, 0, 0, 0.1)",
               }}
               marginHeight="0"
               marginWidth="0"
@@ -45,11 +46,17 @@ const GoogleMapsPage = () => {
             height: 400px;
             border-radius: 10px;
             padding: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s ease-in-out;
           }
 
           .gmap_iframe {
             width: 100%;
             height: 100%;
+          }
+
+          .gmap_canvas:hover {
+            transform: translateY(-5px); /* Adjust the value for the desired lift */
           }
         `}
       </style>
