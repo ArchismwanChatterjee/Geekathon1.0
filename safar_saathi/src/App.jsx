@@ -108,9 +108,12 @@ const App = () => {
             />
           }
         />
+        <Route
+          path="itinerary"
+          element={<MainContent itinerary={generatedItinerary} />}
+        />
         {/* <Route path="google-maps" element={<GoogleMapsPage />} /> */}
       </Routes>
-      <MainContent itinerary={generatedItinerary} />
     </div>
   );
 };
