@@ -1,14 +1,28 @@
 /* eslint-disable no-unused-vars */
 import "./plan_page.css";
 import { useState, useEffect } from "react";
+import { useNavigate } from "react-router-dom";
 
-const matchingPlaces = [];
-const elements = [];
-
-const PlanPage = ({ searchInput, date, days, people }) => {
+const PlanPage = ({ searchInput, date, days, people,setItinerary }) => {
   const [data, setData] = useState([]);
   const [matchingPlaces, setMatchingPlaces] = useState([]);
   const [elements, setElements] = useState([]);
+  const navigate = useNavigate();
+
+  const Submit = () => {
+    var output_list = [];
+    var checkboxes = document.querySelectorAll(".check");
+    checkboxes.forEach(function (checkbox) {
+      if (checkbox.checked) {
+        var parent = document.getElementById(checkbox.parentNode.id);
+        var hi = parent.innerHTML.split("</h2>");
+        hi = hi[0].split("<h2>");
+        output_list.push(hi[1]);
+      }
+    });
+    setItinerary(output_list);
+    navigate("/itinerary");
+  };
 
   useEffect(() => {
     const fetchData = async () => {
@@ -57,7 +71,9 @@ const PlanPage = ({ searchInput, date, days, people }) => {
         <h1>Choose Places You Want To Visit</h1>
       </div>
       <div class="button-container">
-        <button id="submit">Submit</button>
+        <button id="submit" onClick={Submit}>
+          Submit
+        </button>
       </div>
       <div className="data-container">{elements}</div>
     </div>
@@ -65,4 +81,3 @@ const PlanPage = ({ searchInput, date, days, people }) => {
 };
 
 export default PlanPage;
-

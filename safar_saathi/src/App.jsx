@@ -12,7 +12,6 @@ import GoogleMapsPage from "./components/map";
 import MainContent from "./components/Itenary";
 
 const App = () => {
-  const generatedItinerary = "Your generated itinerary goes here.";
   const logout = () => {
     auth
       .signOut()
@@ -32,6 +31,8 @@ const App = () => {
   const [date, setDate] = useState("");
   const [days, setDays] = useState("");
   const [people, setPeople] = useState("");
+
+  const [itinerary,setItinerary]=useState("");
 
   function createPlan(searchInput, date, days, people) {
     setSearchInput(searchInput);
@@ -105,12 +106,13 @@ const App = () => {
               date={date}
               days={days}
               people={people}
+              setItinerary={(itinerary)=>{setItinerary(itinerary)}}
             />
           }
         />
         <Route
           path="itinerary"
-          element={<MainContent itinerary={generatedItinerary} />}
+          element={<MainContent itinerary={itinerary} place={searchInput}/>}
         />
         {/* <Route path="google-maps" element={<GoogleMapsPage />} /> */}
       </Routes>

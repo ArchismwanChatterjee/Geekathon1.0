@@ -22,11 +22,11 @@ const ItineraryCard = ({ itinerary }) => {
   );
 };
 
-const MainContent = ({ itinerary }) => {
+const MainContent = ({ itinerary,place }) => {
   return (
     <div className="main-content" style={{ paddingTop: "60px" }}>
       {/* Add upper padding here */}
-      <GoogleMapsPage />
+      <GoogleMapsPage place={place}/>
       <ItineraryCard itinerary={itinerary} />
       <style>
         {`
