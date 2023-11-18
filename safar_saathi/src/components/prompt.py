@@ -33,7 +33,7 @@ If the number of destinations is double the number of days it is very hectic for
 #  If {dest} is double the {x} it is very hectic for me to visit all the places. Based on the trip you created, what will be the total expense of traveling around and just enjoying for {person} person? Include the prices for {hotel}'''
 
 # Replace with your OpenAI API key
-api_key = "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"
+api_key = os.environ.get("key")
 
 # os.environ.get
 
