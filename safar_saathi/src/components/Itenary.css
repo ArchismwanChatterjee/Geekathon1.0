@@ -1,0 +1,69 @@
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+  }
+  #heading {
+    align-content: center;
+  }
+  .container {
+    margin: 100px 20px 50px; /* 100px from top, 20px from left and right, 50px from the bottom */
+    height: calc(100vh - 100px - 50px); /* Calculate remaining height after considering top and bottom margins */
+    overflow:  scroll; /* Ensure content doesn't overflow */
+  }
+  
+  .main-content {
+    margin-top: 100px;
+    display: flex;
+    height: 500px; /* Take up full height of the container */
+  }
+  
+  .google-map {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex: 1;
+    height: 550px; /* Take up full height of the parent container */
+  }
+  
+  .itinerary-container {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+    background-color: rgba(255, 255, 255, 0.75);
+    position: relative;
+    height: 550px; /* Take up full height of the parent container */
+    padding-bottom: 10px;
+    border-radius: 20px;
+    margin-right: 70px;
+  }
+  
+  
+  .button-container {
+    align-self: flex-end;
+    margin-bottom: 20px; /* Adjust margin as needed */
+    
+  }
+  
+  .virtual-tour-button {
+    cursor: pointer;
+    padding: 10px;
+    background-color: #3498db;
+    color: #fff;
+    text-align: center;
+    background-image: linear-gradient(
+        to right,
+        rgb(234, 156, 219),
+        rgb(239, 132, 171)
+      );
+      border-radius: 2.4vw;
+  }
+  
+  /* Optional: Add more styling as needed */
+  
+  
+  
+  
+  

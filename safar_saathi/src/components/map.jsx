@@ -3,11 +3,16 @@
 import React from "react";
 
 const GoogleMapsPage = ({ place }) => {
-  let query =
-    "https://maps.google.com/maps?width=600&amp;height=400&amp;hl=en&amp;q=Victoria Memorial&amp;t=h&amp;z=13&amp;ie=UTF8&amp;iwloc=B&amp;output=embed";
+  // Construct the query string with the desired parameters
+  const coordinates = '22.5449,88.345'; // Replace with the desired coordinates
+const query = `https://maps.google.com/maps?q=${encodeURIComponent(
+  coordinates
+)}&t=m&z=15&output=embed&markers=${encodeURIComponent(coordinates)}`;
+
+
   return (
     <div>
-      <h1 className="google-maps-header">GOOGLE MAP</h1>
+      {/* <h1 className="google-maps-header">GOOGLE MAP</h1> */}
 
       <div className="map-container">
         <div className="mapouter">
@@ -20,20 +25,27 @@ const GoogleMapsPage = ({ place }) => {
                 borderRadius: "10px",
                 padding: "10px",
                 boxShadow: "0 4px 8px rgba(0, 0, 0, 0.1)",
+                width: "600px",
+                height: "400px",
               }}
               marginHeight="0"
               marginWidth="0"
-              src="https://maps.google.com/maps?width=600&amp;height=400&amp;hl=en&amp;q=Victoria Memorial&amp;t=h&amp;z=13&amp;ie=UTF8&amp;iwloc=B&amp;output=embed"
+              src={query}
             ></iframe>
-            <a href="https://connectionsgame.org/">Connections NYT</a>
           </div>
         </div>
       </div>
 
       <style>
         {`
+          * {
+            padding: 0px;
+            margin: 0px;
+          }
 
-        .google-maps-header {
+          /* Your existing styles */
+
+          .google-maps-header {
             font-size: 36px;
             font-weight: bold;
             color: #87ceeb; /* Sky text */
@@ -45,7 +57,7 @@ const GoogleMapsPage = ({ place }) => {
             margin-bottom: 10px;
             margin-top: 10px;
             margin-left: 160px;
-        }
+          }
 
           .map-container {
             display: flex;
@@ -60,8 +72,6 @@ const GoogleMapsPage = ({ place }) => {
           .gmap_canvas {
             overflow: hidden;
             background: none !important;
-            width: 600px;
-            height: 400px;
             border-radius: 10px;
             padding: 10px;
             box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
@@ -83,3 +93,4 @@ const GoogleMapsPage = ({ place }) => {
 };
 
 export default GoogleMapsPage;
+

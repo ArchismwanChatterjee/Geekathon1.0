@@ -243,6 +243,7 @@ a {
   text-align: center;
 }
 .createplan {
+  text-decoration: none;
   align-self: center;
   padding: 1vw 2vw;
   border-radius: 2.4vw;
