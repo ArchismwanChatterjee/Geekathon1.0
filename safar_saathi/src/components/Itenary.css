@@ -3,11 +3,22 @@
     margin: 0;
     box-sizing: border-box;
   }
-  #heading {
-    align-content: center;
-  }
+
+.itinerary-card {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start; /* Align items to the start (top) */
+    align-items: center;
+    padding-left: 10px;
+    padding-right: 10px;
+}
+
+h2{
+    margin-top: 20px;
+}
+  
   .container {
-    margin: 100px 20px 50px; /* 100px from top, 20px from left and right, 50px from the bottom */
+    margin: 20px 20px 50px; /* 100px from top, 20px from left and right, 50px from the bottom */
     height: calc(100vh - 100px - 50px); /* Calculate remaining height after considering top and bottom margins */
     overflow:  scroll; /* Ensure content doesn't overflow */
   }

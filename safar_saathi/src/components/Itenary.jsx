@@ -5,8 +5,8 @@ import "./Itenary.css";
 const ItineraryCard = ({ itinerary }) => {
   return (
     <div className="itinerary-card">
-      <h2 id="heading">Generated Itinerary</h2>
-      <div>{itinerary}</div>
+      <h2>Generated Itinerary</h2>
+      <div id="itinerary">{itinerary}</div>
     </div>
   );
 };
