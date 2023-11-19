@@ -140,16 +140,17 @@ const LandingPage = ({ createPlan }) => {
               onChange={handleInputChange}
             />
             {suggestions.length > 0 && (
-              <ul className="suggestions">
+              <div className="dropdown">
                 {suggestions.map((suggestion, index) => (
-                  <li
+                  <div
                     key={index}
+                    className="dropdown-item"
                     onClick={() => handleSuggestionClick(suggestion)}
                   >
                     {suggestion}
-                  </li>
+                  </div>
                 ))}
-              </ul>
+              </div>
             )}
           </div>
           <div className="oneone">

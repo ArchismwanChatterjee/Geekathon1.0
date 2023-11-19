@@ -257,3 +257,34 @@ a {
   color: black;
   cursor: pointer;
 }
+
+
+.oneone {
+  position: relative;
+}
+
+.dropdown {
+  position: absolute;
+  top: 100%;
+  left: 0;
+  width: 44vw; /* Adjust width as needed */
+  background-color: rgba(255, 255, 255, 1);
+  border: 3px solid black;
+  border-radius: 20px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  max-height: 150px;
+  overflow-y: auto;
+  z-index: 1;
+}
+
+.dropdown-item {
+  font-size: 10pt;
+  padding: 7px;
+  margin-left: 7px;
+  cursor: pointer;
+  color: rgb(90, 88, 88); /* Set text color to black */
+}
+
+/* Optional: Add more styling as needed */
+
+
