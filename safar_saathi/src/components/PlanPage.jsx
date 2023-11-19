@@ -8,7 +8,8 @@ const PlanPage = ({ searchInput, date, days, people,setItinerary }) => {
   const [matchingPlaces, setMatchingPlaces] = useState([]);
   const [elements, setElements] = useState([]);
   const navigate = useNavigate();
-
+  //localStorage.setItem()
+  localStorage.setItem("day", days);
   const Submit = () => {
     var output_list = [];
     var checkboxes = document.querySelectorAll(".check");
