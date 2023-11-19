@@ -1,6 +1,6 @@
 ![logo](https://i.imgur.com/XP34GTX.png)
 # Safar Saathi
-## Your AI trip planner
+## Your personal AI-trip planner to make travel planning simple.
 
 
 Safar Saathi is all you need if you plan to travel in India, we use modern AI apis powered by react to build a powerful travel planner.
@@ -8,7 +8,7 @@ Safar Saathi is all you need if you plan to travel in India, we use modern AI ap
 - Choose the places you wish to visit in that place.
 - See the ✨Magic ✨ Happen.
 
-## Techstack used
+## Techstack used:
 
 - Design using Figma, Adobe Photosop.
 - Front-end using React js & CSS.
@@ -17,7 +17,7 @@ Safar Saathi is all you need if you plan to travel in India, we use modern AI ap
 - Node.js as package manager & runtime environment.
 - Dataset: we are currently using an [opensource dataset](https://www.kaggle.com/datasets/naqibahmedkadri/famous-indian-tourist-places?select=Places.csv)
 
-## Installation
+## Installation:
 
 - clone this repository
 
@@ -32,7 +32,7 @@ npm run
 ```
 
 
-## Development
+## Development:
 
 Want to contribute? Great!
 
@@ -42,6 +42,14 @@ Buid once, make a change in your file and instantaneously see your updates!
 checkout *Installation* above to set it up locally.
 
 make sure all changes you make are in the testing branch
+
+## Deployment:
+
+Our website is deployed using both firebase hosting and replit the links are available ⬇️
+
+Firebase: [Link1](https://safarsaathi5.web.app/)  and  [Link2](https://safarsaathi5.firebaseapp.com/)
+
+Replit: [Link](https://replit.com/@EshanDas2/Safar-sathi)
 
 # License
 
