@@ -2,13 +2,128 @@ import React, { useState } from "react";
 import "./landingPage.css";
 import { Link } from "react-router-dom";
 
-// import "./script.js"; // Assuming this is the file where you have your JavaScript logic
-
-const LandingPage = ({createPlan}) => {
+const LandingPage = ({ createPlan }) => {
   const [searchInput, setSearchInput] = useState("");
+  const [suggestions, setSuggestions] = useState([]);
   const [date, setDate] = useState("");
   const [days, setDays] = useState("");
   const [people, setPeople] = useState("");
+
+  const locations = [
+    "Manali",
+    "Leh Ladakh",
+    "Coorg",
+    "Andaman",
+    "Lakshadweep",
+    "Goa",
+    "Udaipur",
+    "Srinagar",
+    "Gangtok",
+    "Munnar",
+    "Varkala",
+    "Mcleodganj",
+    "Rishikesh",
+    "Alleppey",
+    "Darjeeling",
+    "Nainital",
+    "Shimla",
+    "Ooty",
+    "Jaipur",
+    "Lonavala",
+    "Mussoorie",
+    "Kodaikanal",
+    "Dalhousie",
+    "Pachmarhi",
+    "Varanasi",
+    "Mumbai",
+    "Agra",
+    "Kolkata",
+    "Jodhpur",
+    "Bangalore",
+    "Amritsar",
+    "Delhi",
+    "Jaisalmer",
+    "Mount Abu",
+    "Wayanad",
+    "Hyderabad",
+    "Pondicherry",
+    "Khajuraho",
+    "Chennai",
+    "Vaishno Devi",
+    "Ajanta and Ellora Caves",
+    "Haridwar",
+    "Kanyakumari",
+    "Pune",
+    "Kochi",
+    "Ahmedabad",
+    "Mysore",
+    "Chandigarh",
+    "Hampi",
+    "Gulmarg",
+    "Almora",
+    "Shirdi",
+    "Auli",
+    "Madurai",
+    "Amarnath",
+    "Bodh Gaya",
+    "Mahabaleshwar",
+    "Visakhapatnam",
+    "Kasol",
+    "Nashik",
+    "Tirupati",
+    "Ujjain",
+    "Jim Corbett National Park",
+    "Gwalior",
+    "Mathura",
+    "Alibaug",
+    "Rameshwaram",
+    "Vrindavan",
+    "Coimbatore",
+    "Lucknow",
+    "Digha",
+    "Dharamshala",
+    "Kovalam",
+    "Madikeri",
+    "Matheran",
+    "Ranthambore",
+    "Agartala",
+    "Khandala",
+    "Kalimpong",
+    "Thanjavur",
+    "Bhubaneswar",
+    "Ajmer",
+    "Aurangabad",
+    "Jammu",
+    "Dehradun",
+    "Puri",
+    "Cherrapunji",
+    "Bikaner",
+    "Shimoga (Shivamogga)",
+    "Hogenakkal",
+    "Kasauli",
+    "Pushkar",
+    "Chittorgarh",
+    "Nahan",
+    "Lavasa",
+    "Poovar",
+  ];
+
+  const handleInputChange = (e) => {
+    const inputValue = e.target.value;
+    setSearchInput(inputValue);
+
+    // Filter locations based on the input value
+    const filteredLocations = locations.filter((location) =>
+      location.toLowerCase().includes(inputValue.toLowerCase())
+    );
+
+    setSuggestions(filteredLocations);
+  };
+
+  const handleSuggestionClick = (suggestion) => {
+    setSearchInput(suggestion);
+    setSuggestions([]); // Clear suggestions when a suggestion is clicked
+  };
 
   return (
     <div className="main">
@@ -22,9 +137,20 @@ const LandingPage = ({createPlan}) => {
               id="searchInput"
               placeholder="Search..."
               value={searchInput}
-              onChange={(e) => setSearchInput(e.target.value)}
+              onChange={handleInputChange}
             />
-            {/* ... (your dropdown code) */}
+            {suggestions.length > 0 && (
+              <ul className="suggestions">
+                {suggestions.map((suggestion, index) => (
+                  <li
+                    key={index}
+                    onClick={() => handleSuggestionClick(suggestion)}
+                  >
+                    {suggestion}
+                  </li>
+                ))}
+              </ul>
+            )}
           </div>
           <div className="oneone">
             <label htmlFor="when">When does your trip Start?</label>
@@ -34,7 +160,6 @@ const LandingPage = ({createPlan}) => {
               id="when"
               value={date}
               onChange={(e) => setDate(e.target.value)}
-              // Add value and onChange props if you want to handle the state
             />
           </div>
           <div className="oneone">
@@ -60,16 +185,19 @@ const LandingPage = ({createPlan}) => {
             />
           </div>
           <div className="oneone1">
-            {/* ... (your checkbox code) */}
-            <div class="oneone1">
+            <div className="oneone1">
               <p>Let others inspire from my trip</p>
-              <label class="switch">
+              <label className="switch">
                 <input type="checkbox" />
-                <span class="slider round"></span>
+                <span className="slider round"></span>
               </label>
             </div>
           </div>
-          <Link to="/plan" className="createplan" onClick={()=>createPlan(searchInput,date,days,people)}>
+          <Link
+            to="/plan"
+            className="createplan"
+            onClick={() => createPlan(searchInput, date, days, people)}
+          >
             Create Plan
           </Link>
         </div>
