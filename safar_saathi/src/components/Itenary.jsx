@@ -33,7 +33,11 @@ const ItineraryCard = ({ itinerary }) => {
   return (
     <div className="itinerary-card">
       <h2>Generated Itinerary</h2>
-      <div id="itinerary">{responseBody}</div>
+      <div id="itinerary">
+        <pre>
+        {responseBody}
+        </pre>
+        </div>
     </div>
   );
 };
