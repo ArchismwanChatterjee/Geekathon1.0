@@ -20,6 +20,7 @@ const PlanPage = ({ searchInput, date, days, people,setItinerary }) => {
         output_list.push(hi[1]);
       }
     });
+    console.log("Output List:", output_list);
     setItinerary(output_list);
     navigate("/itinerary");
   };
