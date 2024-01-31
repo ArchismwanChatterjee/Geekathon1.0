@@ -31,7 +31,7 @@ const PreviousItinerary = () => {
         const numberOfCards = Number(parsedResult);
         const cardData = Array.from({ length: numberOfCards }, (_, index) => ({
           id: index + 1,
-          title: `${email}_${index + 1}`,
+          title: `${index + 1}`,
           content: `Content for ${email}_${index + 1}`,
         }));
 
@@ -80,14 +80,23 @@ const PreviousItinerary = () => {
     // ... rest of the component
     <div style={{ display: "flex" }}>
       {/* Left Column */}
-      <div style={{ flex: 1, padding: "20px", borderRight: "1px solid #ccc" }}>
-        <h2>Left Column</h2>
+      <div
+        style={{
+          flex: 1,
+          padding: "20px",
+          borderRight: "1px solid #ccc",
+          textAlign: "center",
+          marginTop: "10px",
+          marginBottom: "20px",
+        }}
+      >
+        <h2>PREVIOUS PLANS</h2>
         <div style={{ display: "flex", flexWrap: "wrap" }}>
           {responseBody.map((card) => (
             <div
               key={card.id}
               style={{
-                width: "200px",
+                width: "100px",
                 margin: "10px",
                 padding: "10px",
                 backgroundColor:
@@ -97,6 +106,8 @@ const PreviousItinerary = () => {
                 border: "1px solid #000",
                 borderRadius: "8px",
                 cursor: "pointer",
+                textAlign: "center",
+                marginTop: "10px",
               }}
               onClick={() => handleCardClick(card.id)}
             >
@@ -114,10 +125,11 @@ const PreviousItinerary = () => {
           padding: "20px",
           backgroundColor: "rgba(255, 255, 255, 0.8)",
           height: "100vh",
+          marginTop: "10px",
           textAlign: "center", // Center-align text horizontally
         }}
       >
-        <h2>Right Column</h2>
+        <h2>PLAN</h2>
         <div>
           {selectedCardData !== null ? (
             <div>
