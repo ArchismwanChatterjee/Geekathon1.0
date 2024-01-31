@@ -134,7 +134,7 @@ const PreviousItinerary = () => {
           {selectedCardData !== null ? (
             <div>
               <h3>{selectedCardData.title}</h3>
-              <p>{selectedCardData}</p>
+              <pre>{selectedCardData}</pre>
             </div>
           ) : null}
         </div>
