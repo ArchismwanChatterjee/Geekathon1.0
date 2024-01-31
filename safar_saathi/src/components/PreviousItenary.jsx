@@ -1,28 +1,89 @@
-// PreviousItinerary.js
-
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 
 const PreviousItinerary = () => {
-  const cardData = [
-    { id: 1, title: "Card 1", content: "Content for Card 1" },
-    { id: 2, title: "Card 2", content: "Content for Card 2" },
-    { id: 3, title: "Card 3", content: "Content for Card 3" },
-    // Add more card data as needed
-  ];
+  const email = localStorage.getItem("email");
 
+  const [responseBody, setResponseBody] = useState([]);
   const [selectedCard, setSelectedCard] = useState(null);
+  const [selectedCardData, setSelectedCardData] = useState(null);
 
-  const handleCardClick = (cardId) => {
+  useEffect(() => {
+    const fetchData = async () => {
+      try {
+        const myHeaders = new Headers();
+        myHeaders.append("Content-Type", "application/json");
+        const raw = JSON.stringify({ email: email });
+        const requestOptions = {
+          method: "POST",
+          headers: myHeaders,
+          body: raw,
+          redirect: "follow",
+        };
+
+        const response = await fetch(
+          "https://4qcyee34jd.execute-api.ap-south-1.amazonaws.com/dev/get_itenary",
+          requestOptions
+        );
+
+        const result = await response.text();
+        const parsedResult = JSON.parse(result).body;
+
+        const numberOfCards = Number(parsedResult);
+        const cardData = Array.from({ length: numberOfCards }, (_, index) => ({
+          id: index + 1,
+          title: `${email}_${index + 1}`,
+          content: `Content for ${email}_${index + 1}`,
+        }));
+
+        setResponseBody(cardData);
+
+        console.log(parsedResult);
+      } catch (error) {
+        console.error("Fetch error:", error);
+      }
+    };
+
+    fetchData();
+  }, [email]);
+
+  const handleCardClick = async (cardId) => {
+    const itenary_id = email + "_" + cardId;
+    const myHeaders = new Headers();
+    myHeaders.append("Content-Type", "application/json");
+    const raw = JSON.stringify({ id: itenary_id });
+    const requestOptions = {
+      method: "POST",
+      headers: myHeaders,
+      body: raw,
+      redirect: "follow",
+    };
+
+    try {
+      const response = await fetch(
+        "https://4qcyee34jd.execute-api.ap-south-1.amazonaws.com/dev/get_itenary_data",
+        requestOptions
+      );
+
+      const result = await response.text();
+      const parsedResult = JSON.parse(result).body;
+
+      setSelectedCardData(parsedResult);
+      console.log(parsedResult);
+    } catch (error) {
+      console.error("Fetch error:", error);
+    }
+
     setSelectedCard(cardId);
   };
 
   return (
+    // ... rest of the component
     <div style={{ display: "flex" }}>
       {/* Left Column */}
       <div style={{ flex: 1, padding: "20px", borderRight: "1px solid #ccc" }}>
         <h2>Left Column</h2>
         <div style={{ display: "flex", flexWrap: "wrap" }}>
-          {cardData.map((card) => (
+          {responseBody.map((card) => (
             <div
               key={card.id}
               style={{
@@ -37,7 +98,8 @@ const PreviousItinerary = () => {
                 borderRadius: "8px",
                 cursor: "pointer",
               }}
-              onClick={() => handleCardClick(card.id)}>
+              onClick={() => handleCardClick(card.id)}
+            >
               <h3>{card.title}</h3>
               {/* Omit content from here */}
             </div>
@@ -53,13 +115,14 @@ const PreviousItinerary = () => {
           backgroundColor: "rgba(255, 255, 255, 0.8)",
           height: "100vh",
           textAlign: "center", // Center-align text horizontally
-        }}>
+        }}
+      >
         <h2>Right Column</h2>
         <div>
-          {selectedCard !== null ? (
+          {selectedCardData !== null ? (
             <div>
-              <h3>{cardData[selectedCard - 1].title}</h3>
-              <p>{cardData[selectedCard - 1].content}</p>
+              <h3>{selectedCardData.title}</h3>
+              <p>{selectedCardData.content}</p>
             </div>
           ) : null}
         </div>
