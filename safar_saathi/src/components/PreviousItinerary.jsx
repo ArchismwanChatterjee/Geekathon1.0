@@ -67,8 +67,8 @@ const PreviousItinerary = () => {
       const result = await response.text();
       const parsedResult = JSON.parse(result).body;
 
-      setSelectedCardData(parsedResult);
       console.log(parsedResult);
+      setSelectedCardData(parsedResult);
     } catch (error) {
       console.error("Fetch error:", error);
     }
@@ -122,7 +122,7 @@ const PreviousItinerary = () => {
           {selectedCardData !== null ? (
             <div>
               <h3>{selectedCardData.title}</h3>
-              <p>{selectedCardData.content}</p>
+              <p>{selectedCardData}</p>
             </div>
           ) : null}
         </div>

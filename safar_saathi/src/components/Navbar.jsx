@@ -32,7 +32,7 @@ const Navbar = ({ login, logout, user, loggedIn }) => {
                 onClick={() => {
                   navigate("/previous-itenary");
                 }}>
-                Previous Itenary
+                Previous Itinerary
               </button>
             </>
           ) : (

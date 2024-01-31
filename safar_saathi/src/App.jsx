@@ -10,7 +10,7 @@ import { auth } from "./components/Login"; // Import your Firebase configuration
 import { useState } from "react";
 import GoogleMapsPage from "./components/map";
 import MainContent from "./components/Itenary";
-import PreviousItenary from "./components/PreviousItenary";
+import PreviousItenary from "./components/PreviousItinerary";
 
 const App = () => {
   const logout = () => {
