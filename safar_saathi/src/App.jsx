@@ -10,6 +10,7 @@ import { auth } from "./components/Login"; // Import your Firebase configuration
 import { useState } from "react";
 import GoogleMapsPage from "./components/map";
 import MainContent from "./components/Itenary";
+import PreviousItenary from "./components/PreviousItenary";
 
 const App = () => {
   const logout = () => {
@@ -25,14 +26,14 @@ const App = () => {
   };
 
   const [user, setUser] = useState("");
-  const [loggedIn, setLoggedIn] = useState("");
+  const [loggedIn, setLoggedIn] = useState(false);
 
   const [searchInput, setSearchInput] = useState("");
   const [date, setDate] = useState("");
   const [days, setDays] = useState("");
   const [people, setPeople] = useState("");
 
-  const [itinerary,setItinerary]=useState("");
+  const [itinerary, setItinerary] = useState("");
 
   function createPlan(searchInput, date, days, people) {
     setSearchInput(searchInput);
@@ -95,8 +96,7 @@ const App = () => {
       <Routes>
         <Route
           path=""
-          element={<LandingPage createPlan={createPlan} />}
-        ></Route>
+          element={<LandingPage createPlan={createPlan} />}></Route>
         {/* <Route path="place" element={<Place />}></Route> */}
         <Route
           path="plan"
@@ -106,13 +106,19 @@ const App = () => {
               date={date}
               days={days}
               people={people}
-              setItinerary={(itinerary)=>{setItinerary(itinerary)}}
+              setItinerary={(itinerary) => {
+                setItinerary(itinerary);
+              }}
             />
           }
         />
         <Route
           path="itinerary"
-          element={<MainContent itinerary={itinerary} place={searchInput}/>}
+          element={<MainContent itinerary={itinerary} place={searchInput} />}
+        />
+        <Route
+          path="previous-itenary"
+          element={loggedIn ? <PreviousItenary /> : <></>}
         />
         {/* <Route path="google-maps" element={<GoogleMapsPage />} /> */}
       </Routes>
