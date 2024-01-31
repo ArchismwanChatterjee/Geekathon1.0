@@ -5,11 +5,11 @@ import "./Itenary.css";
 const ItineraryCard = ({ itinerary }) => {
   const day = localStorage.getItem("day");
   const [responseBody, setResponseBody] = useState(null);
-
+  const email = localStorage.getItem("email");
   useEffect(() => {
     var myHeaders = new Headers();
     myHeaders.append("Content-Type", "application/json");
-    var raw = JSON.stringify({ "day": day, "place": itinerary });
+    var raw = JSON.stringify({ day: day, place: itinerary, email: email });
     var requestOptions = {
       method: "POST",
       headers: myHeaders,
@@ -34,10 +34,8 @@ const ItineraryCard = ({ itinerary }) => {
     <div className="itinerary-card">
       <h2>Generated Itinerary</h2>
       <div id="itinerary">
-        <pre>
-        {responseBody}
-        </pre>
-        </div>
+        <pre>{responseBody}</pre>
+      </div>
     </div>
   );
 };
